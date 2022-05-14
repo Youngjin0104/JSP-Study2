@@ -1,0 +1,12 @@
+
+자바 빈즈를 이용한 데이터 베이스 연동
+
+1. RegisterBean.java
+2. RegisterDao.java --> 패키지 생성
+
+
+연습
+
+1. MemberBean.java
+2. BemberDao.java
+3. member.jsp

@@ -1,0 +1,41 @@
+
+JDBC란
+
+데이터 베이스를 다루기 위한 자바 API(Application Programming Interface)
+-> 자바 기반으로 프로그램을 작성할 때 개발자에게 데이터베이스를 쉽게 다룰 수 있도록 해주는 것
+
+하나의 도구를 만들어 놓고 개발자는 도구만 사용하면 각각에 DBMS 내부까지 신경을 쓰지 않고 
+어떤 DBMS든 쉽게 사용할 수 있게 한다.(리모콘)
+
+JDBC 구성
+
+JDBC 인터페이스 + JDBC 드라이버
+
+1. JDBC Driver 설치 (MySQL)
+2. 연동 테스트
+3. usingJDBC.jsp
+
+
+JDBC 를 통한 데이터 베이스 연결 핵심 단계
+
+1. JDBC 드라이버의  인스턴스 생성
+--> Class.forName("Driver_name");
+
+2. JDBC 드라이버 인스턴스를 통해 DBMS에 대한 연결 매니저 생성
+--> Connection con = DriverManager.getConnnection("DBURL", "AccountID", "PWD");
+
+3. Statement 생성
+--> Statement stmt = con.createStatement();
+
+4. 쿼리문 실행 / ResultSet 으로 결과 받음
+--> ResultSet rs = stmt.executeQuery("select * from tbl where id = 1");
+
+5. ResultSet 해지
+--> rs.close()
+
+6. Statement 해지
+--> stmt.close()
+
+7. 데이터베이스와 연결 해지
+--> con.close();
+
